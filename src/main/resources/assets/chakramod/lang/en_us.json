@@ -1,0 +1,16 @@
+{
+    "item.chakramod.malachit": "Malachite",
+    "item.chakramod.magnetit": "Magnetite",
+    "item.chakramod.amazonite": "Amazonite",
+    "item.chakramod.rhodonite": "Rhodonite",
+    "item.chakramod.mineral_snail_spawn_egg": "Mineral Snail Spawn Egg",
+
+    "block.chakramod.heart_ore": "Heart Ore",
+    "block.chakramod.chakra_stone": "Chakra Stone",
+    "block.chakramod.chakra_grass": "Chakra Grass",
+    "block.chakramod.chakra_gravel": "Chakra Gravel",
+    "block.chakramod.stone_work_bench": "Stone Work Bench",
+    "block.chakramod.glowstone_crystal": "Glowstone Crystal",
+
+    "itemGroup.chakramod.malachit": "Chakra Mod"
+}

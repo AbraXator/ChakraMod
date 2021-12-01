@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "chakramod",
+  "version": "${version}",
+
+  "name": "Example Mod",
+  "description": "This is an example description! Tell everyone what your mod is about!",
+  "authors": [
+    "AbraXator, Nikdo53"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+
+  "license": "MIT",
+  "icon": "assets/chakramod/thicc.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.chakramod.mod.ChakraMod"
+    ],
+    "client": [
+      "net.chakramod.mod.ChakraModClient"
+    ]
+  },
+  "mixins": [
+    "chakramod.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.11.3",
+    "fabric": "*",
+    "minecraft": "1.17.x",
+    "java": ">=16"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

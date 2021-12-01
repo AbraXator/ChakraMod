@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#&#",
+    "#@#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:deepslate"
+    },
+    "&": {
+      "item": "minecraft:lime_carpet"
+    },
+    "@": {
+      "item": "smooth_stone_slab"
+    }
+  },
+  "result": {
+    "item": "chakramod:stone_work_bench"
+  }
+}
