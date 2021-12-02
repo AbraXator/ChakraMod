@@ -1,8 +1,9 @@
 package net.chakramod.mod;
 
 import net.chakramod.mod.block.ModBlocks;
-import net.chakramod.mod.block.custom.stoneWorkBench.StoneWorkBenchScreen;
+import net.chakramod.mod.screen.StoneWorkBenchScreen;
 import net.chakramod.mod.entity.renderer.MineralSnailEntityRenderer;
+import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -14,6 +15,7 @@ import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.screen.PlayerScreenHandler;
+import net.minecraft.screen.ScreenHandler;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
@@ -23,13 +25,12 @@ public class ChakraModClient implements ClientModInitializer {
     public void onInitializeClient() {
 //-------------SCREEN INIT------------------------
 
-        ScreenRegistry.register(ChakraMod.BOX_SCREEN_HANDLER, StoneWorkBenchScreen::new);
+   //     ScreenRegistry.register(ChakraMod.STONE_WORK_BENCH_SCREEN_HANDLER,
+   //             StoneWorkBenchScreenHandler::new);
 
 //--------------PARTICLE INIT--------------
 
-        ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register(((atlasTexture, registry) -> {
-            registry.register(new Identifier("chakramod", "glowstone_crystal_particle"));
-        }));
+        ClientSpriteRegistryCallback.event(PlayerScreenHandler.BLOCK_ATLAS_TEXTURE).register(((atlasTexture, registry) -> registry.register(new Identifier("chakramod", "glowstone_crystal_particle"))));
         ParticleFactoryRegistry.getInstance().register(ChakraMod.GLOWSTONE_CRYSTAL_PARTICLE, FlameParticle.Factory::new);
 
 //---------------ENTITY INIT---------------

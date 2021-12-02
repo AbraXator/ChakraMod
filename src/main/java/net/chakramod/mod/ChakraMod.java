@@ -2,20 +2,18 @@ package net.chakramod.mod;
 
 import net.chakramod.mod.block.ModBlocks;
 import net.chakramod.mod.block.custom.stoneWorkBench.StoneWorkBenchEntity;
-import net.chakramod.mod.block.custom.stoneWorkBench.StoneWorkBenchScreen;
-import net.chakramod.mod.block.custom.stoneWorkBench.StoneWorkBenchScreenHandler;
+import net.chakramod.mod.gen.ModWorldGen;
+import net.chakramod.mod.gen.biome.ModBiomes;
+import net.chakramod.mod.gen.features.ModConfiguredFeatures;
+import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
 import net.chakramod.mod.entity.MineralSnailEntity;
 import net.chakramod.mod.item.ModItemGroup;
 import net.chakramod.mod.item.ModItems;
-import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.OverworldBiomes;
 import net.fabricmc.fabric.api.biome.v1.OverworldClimate;
-import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -61,7 +59,8 @@ public class ChakraMod implements ModInitializer {
 
 	public static final DefaultParticleType GLOWSTONE_CRYSTAL_PARTICLE = FabricParticleTypes.simple();
 
-//----------ACTIVITY--------------
+//----------GEN--------------
+
 
 
 //-------------SPAWN EGG-------------
@@ -99,36 +98,7 @@ public class ChakraMod implements ModInitializer {
 
 //-------------BIOME--------------------
 
-	private static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> CHAKRA_BIOME_SURFACE_BUILDER = SurfaceBuilder.DEFAULT
-			.withConfig(new TernarySurfaceConfig(
-					ModBlocks.CHAKRA_GRASS.getDefaultState(),
-					ModBlocks.CHAKRA_STONE.getDefaultState(),
-					ModBlocks.CHAKRA_GRAVEL.getDefaultState()));
-	private static final Biome CHAKRA_BIOME = createChakraBiome();
-	private static Biome createChakraBiome() {
-		SpawnSettings.Builder spawnSettings = new SpawnSettings.Builder();
-		GenerationSettings.Builder generationSettings = new GenerationSettings.Builder();
-		generationSettings.surfaceBuilder(CHAKRA_BIOME_SURFACE_BUILDER);
-		DefaultBiomeFeatures.addDefaultDisks(generationSettings);
-		DefaultBiomeFeatures.addSprings(generationSettings);
-		return (new Biome.Builder())
-				.precipitation(Biome.Precipitation.RAIN)
-				.category(Biome.Category.NONE)
-				.depth(0.125F)
-				.scale(0.05F)
-				.temperature(0.8F)
-				.downfall(0.4F)
-				.effects((new BiomeEffects.Builder())
-						.waterColor(0x3f76e4)
-						.waterFogColor(0x050533)
-						.fogColor(0x000000)
-						.skyColor(0x000000)
-						.build())
-				.spawnSettings(spawnSettings.build())
-				.generationSettings(generationSettings.build())
-				.build();
-	}
-	public static final RegistryKey<Biome> CHAKRA_BIOME_KEY = RegistryKey.of(Registry.BIOME_KEY, new Identifier("chakramod", "chakra_biome"));
+
 
 //-----------------VAR------------------
 
@@ -140,7 +110,9 @@ public class ChakraMod implements ModInitializer {
 
 //---------------SCREEN-------------
 
-	public static final ScreenHandlerType<StoneWorkBenchScreenHandler> OVEN = ScreenHandlerRegistry.registerSimple(new Identifier("my_mod", "oven"), OvenScreenHandler::new);
+	public static ScreenHandlerType<StoneWorkBenchScreenHandler> STONE_WORK_BENCH_SCREEN_HANDLER =
+			ScreenHandlerRegistry.registerSimple(new Identifier(ChakraMod.MOD_ID, "stone_work_bench"),
+					StoneWorkBenchScreenHandler::new);
 
 //--------------BLOCK ENTITY----------------
 
@@ -150,6 +122,13 @@ public class ChakraMod implements ModInitializer {
 
 	@Override
 	public void onInitialize() {
+//-----------GEN INIT-------------
+
+		ModConfiguredFeatures.registerConfiguredFeatures();
+		ModBiomes.initBiomes();
+		ModBiomes.registerBiomes();
+		ModWorldGen.generateModWorldGen();
+
 //------------PARTICLE INIT--------------
 
 		Registry.register(Registry.PARTICLE_TYPE, new Identifier("chakramod", "glowstone_crystal_particle"), GLOWSTONE_CRYSTAL_PARTICLE);
@@ -166,13 +145,6 @@ public class ChakraMod implements ModInitializer {
 //--------------GECKO_LIB INIT-----------
 
 		GeckoLib.initialize();
-
-//------------BIOME INIT-------------
-
-		Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER, new Identifier("tutorial", "obsidian"), CHAKRA_BIOME_SURFACE_BUILDER);
-		Registry.register(BuiltinRegistries.BIOME, CHAKRA_BIOME_KEY.getValue(), CHAKRA_BIOME);
-		OverworldBiomes.addContinentalBiome(CHAKRA_BIOME_KEY, OverworldClimate.TEMPERATE, 2D);
-		OverworldBiomes.addContinentalBiome(CHAKRA_BIOME_KEY, OverworldClimate.COOL, 2D);
 
 //-------------REG INIT-----------
 

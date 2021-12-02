@@ -31,10 +31,6 @@ import org.jetbrains.annotations.Nullable;
 public class StoneWorkBench extends BlockWithEntity implements BlockEntityProvider {
     private static final Text TITLE = new TranslatableText("container.stone_work_bench_crafting");
 
-    public SpiritpowerCrafterBlock(Settings settings) {
-        super(settings);
-    }
-
     @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new StoneWorkBenchEntity(pos, state);
@@ -63,13 +59,6 @@ public class StoneWorkBench extends BlockWithEntity implements BlockEntityProvid
             player.incrementStat(Stats.INTERACT_WITH_CRAFTING_TABLE);
             return ActionResult.CONSUME;
         }
-    }
-
-    @Override
-    public NamedScreenHandlerFactory createScreenHandlerFactory(BlockState state, World world, BlockPos pos) {
-        return new SimpleNamedScreenHandlerFactory((i, playerInventory, playerEntity) -> {
-            return new TestCraftingScreenHandler(i, playerInventory, ScreenHandlerContext.create(world, pos));
-        }, TITLE);
     }
 
     @Override

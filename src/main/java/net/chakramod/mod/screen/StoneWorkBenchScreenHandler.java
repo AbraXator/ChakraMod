@@ -1,26 +1,28 @@
-package net.chakramod.mod.block.custom.stoneWorkBench;
+package net.chakramod.mod.screen;
 
 import net.chakramod.mod.ChakraMod;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
+import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenHandler;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
+import net.minecraft.text.Text;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.system.CallbackI;
 
 public class StoneWorkBenchScreenHandler extends ScreenHandler {
     private final Inventory inventory;
 
-    protected StoneWorkBenchScreenHandler(@Nullable ScreenHandlerType<?> type, int syncId, Inventory inventory) {
-        super(type, syncId);
-        this.inventory = inventory;
+    public StoneWorkBenchScreenHandler(int syncId, PlayerInventory playerInventory) {
+        this(syncId, playerInventory, new SimpleInventory(3));
     }
 
     public StoneWorkBenchScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory){
         super(ChakraMod.STONE_WORK_BENCH_SCREEN_HANDLER, syncId);
+        this.inventory = inventory;
         checkSize(inventory, 3);
         inventory.onOpen(playerInventory.player);
 
