@@ -1,3 +1,8 @@
+<<<<<<< HEAD
 {
     "parent": "chakramod:block/black_mineral_stone"
+=======
+{
+    "parent": "chakramod:block/black_mineral_stone"
+>>>>>>> origin/master
 }
