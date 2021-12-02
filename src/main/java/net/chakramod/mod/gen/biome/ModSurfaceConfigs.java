@@ -3,6 +3,8 @@ package net.chakramod.mod.gen.biome;
 import com.eliotlash.mclib.math.functions.classic.Mod;
 import net.chakramod.mod.ChakraMod;
 import net.chakramod.mod.block.ModBlocks;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -15,9 +17,9 @@ import org.lwjgl.system.CallbackI;
 public class ModSurfaceConfigs {
     public static final ConfiguredSurfaceBuilder<TernarySurfaceConfig> CHAKRA_SURFACE_BUILDER = register("chakra_surface",
             SurfaceBuilder.DEFAULT.withConfig(new TernarySurfaceConfig(
-                    ModBlocks.CHAKRA_GRASS.getDefaultState(),
-                    ModBlocks.CHAKRA_STONE.getDefaultState(),
-                    ModBlocks.CHAKRA_GRAVEL.getDefaultState())));
+                    Blocks.GRASS_BLOCK.getDefaultState(),
+                    ModBlocks.BLACK_MINERAL_STONE.getDefaultState(),
+                    ModBlocks.HEART_ORE.getDefaultState())));
 
     private static <T extends SurfaceConfig> ConfiguredSurfaceBuilder<T> register(String name,
                                                                                   ConfiguredSurfaceBuilder<T> surfaceBuilder){

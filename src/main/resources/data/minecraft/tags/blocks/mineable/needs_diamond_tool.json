@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "chakramod:stoneworkbench"
+    "chakramod:stone_work_bench",
+    "chakramod:black_mineral_stone"
   ]
 }
