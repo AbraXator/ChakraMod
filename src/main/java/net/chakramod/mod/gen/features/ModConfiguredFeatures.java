@@ -1,7 +1,8 @@
-package net.chakramod.mod.gen.features;
+/*package net.chakramod.mod.gen.features;
 
 import net.chakramod.mod.ChakraMod;
 import net.chakramod.mod.block.ModBlocks;
+import net.minecraft.structure.rule.RuleTest;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
@@ -17,7 +18,7 @@ public class ModConfiguredFeatures {
     public static final RegistryKey<ConfiguredFeature<?, ?>> HEART_ORE_KEY = registerKey("heart_ore");
 
     public static final ConfiguredFeature<?, ?> HEART_ORE = register(Feature.ORE.configure(
-                    new OreFeatureConfig(OreFeatureConfig.Rules.BASE_STONE_OVERWORLD, ModBlocks.HEART_ORE.getDefaultState(), 8))
+                    new OreFeatureConfig(OreFeatureConfig.createTarget().BASE_STONE_OVERWORLD, ModBlocks.HEART_ORE.getDefaultState(), 8))
             .range(new RangeDecoratorConfig(UniformHeightProvider.create(YOffset.aboveBottom(2), YOffset.fixed(45))))
             .spreadHorizontally().repeat(6), HEART_ORE_KEY);
 
@@ -33,4 +34,4 @@ public class ModConfiguredFeatures {
     public static void registerConfiguredFeatures() {
         System.out.println("Registering ModConfiguredFeatures for " + ChakraMod.MOD_ID);
     }
-}
+}*/

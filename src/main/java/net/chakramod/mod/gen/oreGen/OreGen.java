@@ -1,4 +1,4 @@
-package net.chakramod.mod.gen.oreGen;
+/*package net.chakramod.mod.gen.oreGen;
 
 import net.chakramod.mod.gen.features.ModConfiguredFeatures;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
@@ -10,4 +10,4 @@ public class OreGen {
         BiomeModifications.addFeature(BiomeSelectors.foundInOverworld(),
             GenerationStep.Feature.UNDERGROUND_ORES, ModConfiguredFeatures.HEART_ORE_KEY);
     }
-}
+}*/

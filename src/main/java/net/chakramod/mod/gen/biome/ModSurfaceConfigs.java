@@ -1,4 +1,4 @@
-package net.chakramod.mod.gen.biome;
+/*package net.chakramod.mod.gen.biome;
 
 import com.eliotlash.mclib.math.functions.classic.Mod;
 import net.chakramod.mod.ChakraMod;
@@ -8,10 +8,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.world.gen.surfacebuilder.ConfiguredSurfaceBuilder;
 import net.minecraft.world.gen.surfacebuilder.SurfaceBuilder;
-import net.minecraft.world.gen.surfacebuilder.SurfaceConfig;
-import net.minecraft.world.gen.surfacebuilder.TernarySurfaceConfig;
 import org.lwjgl.system.CallbackI;
 
 public class ModSurfaceConfigs {
@@ -26,4 +23,4 @@ public class ModSurfaceConfigs {
         return Registry.register(BuiltinRegistries.CONFIGURED_SURFACE_BUILDER,
                 new Identifier(ChakraMod.MOD_ID, name), surfaceBuilder);
     }
-}
+}*/
