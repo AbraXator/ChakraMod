@@ -25,8 +25,7 @@ public class ChakraModClient implements ClientModInitializer {
     public void onInitializeClient() {
 //-------------SCREEN INIT------------------------
 
-   //     ScreenRegistry.register(ChakraMod.STONE_WORK_BENCH_SCREEN_HANDLER,
-   //             StoneWorkBenchScreenHandler::new);
+        ScreenRegistry.register(ChakraMod.STONE_WORK_BENCH_SCREEN_HANDLER, StoneWorkBenchScreen::new);
 
 //--------------PARTICLE INIT--------------
 

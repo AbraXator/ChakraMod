@@ -3,7 +3,6 @@ package net.chakramod.mod;
 import net.chakramod.mod.block.ModBlocks;
 import net.chakramod.mod.block.custom.stoneWorkBench.StoneWorkBenchEntity;
 import net.chakramod.mod.gen.ModWorldGen;
-import net.chakramod.mod.gen.biome.ModBiomes;
 import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
 import net.chakramod.mod.entity.MineralSnailEntity;
 import net.chakramod.mod.item.ModItemGroup;
@@ -111,8 +110,8 @@ public class ChakraMod implements ModInitializer {
 //-----------GEN INIT-------------
 
 		//ModConfiguredFeatures.registerConfiguredFeatures();
-		ModBiomes.initBiomes();
-		ModBiomes.registerBiomes();
+		//ModBiomes.initBiomes();
+		//ModBiomes.registerBiomes();
 		ModWorldGen.generateModWorldGen();
 
 //------------PARTICLE INIT--------------

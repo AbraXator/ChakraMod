@@ -51,19 +51,20 @@ public class StoneWorkBench extends BlockWithEntity implements BlockEntityProvid
     }
 
     @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if(world.isClient) {
-            return ActionResult.SUCCESS;
-        } else {
-            player.openHandledScreen(state.createScreenHandlerFactory(world, pos));
-            player.incrementStat(Stats.INTERACT_WITH_CRAFTING_TABLE);
-            return ActionResult.CONSUME;
+    public ActionResult onUse(BlockState state, World world, BlockPos pos,
+                              PlayerEntity player, Hand hand, BlockHitResult hit) {
+        if (!world.isClient) {
+            NamedScreenHandlerFactory screenHandlerFactory = state.createScreenHandlerFactory(world, pos);
+
+            if (screenHandlerFactory != null) {
+                player.openHandledScreen(screenHandlerFactory);
+            }
         }
+        return ActionResult.SUCCESS;
     }
 
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         return VoxelShapes.cuboid(0f, 0.01f, 0f, 1f, 0.7f, 1f);
     }
-
 }

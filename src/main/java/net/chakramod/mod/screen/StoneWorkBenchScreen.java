@@ -10,7 +10,7 @@ import net.minecraft.screen.ScreenHandler;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 
-public class StoneWorkBenchScreen extends HandledScreen<ScreenHandler> {
+public class StoneWorkBenchScreen extends HandledScreen<StoneWorkBenchScreenHandler> {
     private static final Identifier TEXTURE =
             new Identifier(ChakraMod.MOD_ID, "textures/gui/container/stone_work_bench_gui.png");
 
