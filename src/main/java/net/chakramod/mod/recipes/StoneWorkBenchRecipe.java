@@ -16,29 +16,14 @@ import net.minecraft.world.World;
 
 public class StoneWorkBenchRecipe implements Recipe<SimpleInventory>{
 
-    private final Ingredient inputA;
-    private final Ingredient inputB;
-    private final ItemStack result;
+    private final DefaultedList<Ingredient> recipeItems;
+    private final ItemStack output;
     private final Identifier id;
 
-    public StoneWorkBenchRecipe(Identifier id, ItemStack result, Ingredient inputA, Ingredient inputB){
+    public StoneWorkBenchRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems){
         this.id = id;
-        this.inputA = inputA;
-        this.inputB = inputB;
-        this.result = result;
-    }
-
-    public Ingredient getInputA() {
-        return this.inputA;
-    }
-
-    public Ingredient getInputB() {
-        return this.inputB;
-    }
-
-    @Override
-    public ItemStack getOutput() {
-        return this.result;
+        this.recipeItems = recipeItems;
+        this.output = output;
     }
 
     @Override
@@ -48,7 +33,12 @@ public class StoneWorkBenchRecipe implements Recipe<SimpleInventory>{
 
     @Override
     public ItemStack craft(SimpleInventory inventory) {
-        return this.getOutput().copy();
+        return output;
+    }
+
+    @Override
+    public ItemStack getOutput() {
+        return output.copy();
     }
 
     @Override
@@ -57,9 +47,11 @@ public class StoneWorkBenchRecipe implements Recipe<SimpleInventory>{
     }
 
     @Override
-    public boolean matches(SimpleInventory inventory, World world) {
-        if(inventory.size() < 2) return false;
-        return inputA.test(inventory.getStack(0)) && inputB.test(inventory.getStack(1));
+    public boolean matches(SimpleInventory inventory, World world){
+        if(recipeItems.get(0).test(inventory.getStack(0))){
+            return recipeItems.get(1).test(inventory.getStack(1));
+        }
+        return false;
     }
 
     public static class Type implements RecipeType<StoneWorkBenchRecipe>{
@@ -92,7 +84,7 @@ public class StoneWorkBenchRecipe implements Recipe<SimpleInventory>{
             for(int i = 0; i < inputs.size(); i++){
                 inputs.set(i, Ingredient.fromJson(ingredients.get(i)));
             }
-            return new StoneWorkBenchRecipe(id, output, inputs.get(0), inputs.get(1));
+            return new StoneWorkBenchRecipe(id, output, inputs);
         }
 
         @Override
@@ -105,7 +97,7 @@ public class StoneWorkBenchRecipe implements Recipe<SimpleInventory>{
 
             ItemStack output = buf.readItemStack();
             return  new StoneWorkBenchRecipe(id, output,
-                    inputs.get(0), inputs.get(1));
+                    inputs);
         }
 
         @Override

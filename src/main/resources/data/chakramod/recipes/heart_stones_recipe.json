@@ -1,10 +1,11 @@
 {
+    "type": "stone_work_bench_recipe",
     "ingredients":[
         {
-            "tag": "chakramod:heart_stones"
+            "item": "minecraft:stone"
         },
         {
-            "tag": "chakramod:armor"
+            "item": "chakramod:amazonite"
         }
     ],
     "output": {

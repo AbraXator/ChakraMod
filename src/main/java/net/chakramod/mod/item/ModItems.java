@@ -4,6 +4,7 @@ import net.chakramod.mod.ChakraMod;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
 
 import net.minecraft.util.registry.*;
@@ -12,15 +13,15 @@ public class ModItems {
 
     public static final Item MALACHIT = registerItem("malachit",
             new Item(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(64)));
-
     public static final Item MAGNETIT = registerItem("magnetit",
             new Item(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(64)));
-
     public static final Item AMAZONITE = registerItem("amazonite",
             new Item(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(64)));
-
     public static final Item RHODONITE = registerItem("rhodonite",
             new Item(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(64)));
+    public static final SpawnEggItem MINERAL_SNAIL_SPAWN_EGG = (SpawnEggItem) registerItem("mineral_snail_spawn_egg",
+            new SpawnEggItem(ChakraMod.MINERAL_SNAIL, 16770508, 7758668,
+                    new Item.Settings().group(ModItemGroup.MALACHIT)));
 
 
     private static Item registerItem(String name, Item item) {

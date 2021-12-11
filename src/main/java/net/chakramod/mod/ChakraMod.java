@@ -3,14 +3,12 @@ package net.chakramod.mod;
 import net.chakramod.mod.block.ModBlocks;
 import net.chakramod.mod.block.custom.stoneWorkBench.StoneWorkBenchEntity;
 import net.chakramod.mod.gen.ModWorldGen;
-import net.chakramod.mod.recipes.StoneWorkBenchRecipe;
+import net.chakramod.mod.recipes.ModRecipes;
 import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
 import net.chakramod.mod.entity.MineralSnailEntity;
 import net.chakramod.mod.item.ModItemGroup;
 import net.chakramod.mod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
 import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -28,18 +26,7 @@ import net.minecraft.item.SpawnEggItem;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
-import net.minecraft.util.registry.BuiltinRegistries;
 import net.minecraft.util.registry.Registry;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.biome.Biome;
-import net.minecraft.world.biome.BiomeEffects;
-import net.minecraft.world.biome.GenerationSettings;
-import net.minecraft.world.biome.SpawnSettings;
-import net.minecraft.world.gen.GenerationStep;
-import net.minecraft.world.gen.YOffset;
-import net.minecraft.world.gen.decorator.RangeDecoratorConfig;
-import net.minecraft.world.gen.feature.*;
-import net.minecraft.world.gen.heightprovider.UniformHeightProvider;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -111,8 +98,7 @@ public class ChakraMod implements ModInitializer {
 	public void onInitialize() {
 //---------RECIPE INIT-------------
 
-		Registry.register(Registry.RECIPE_SERIALIZER, new Identifier(ChakraMod.MOD_ID, StoneWorkBenchRecipe.Serializer.ID), StoneWorkBenchRecipe.Serializer.INSTANCE);
-		Registry.register(Registry.RECIPE_TYPE, new Identifier(ChakraMod.MOD_ID, StoneWorkBenchRecipe.Type.ID), StoneWorkBenchRecipe.Type.INSTANCE);
+		ModRecipes.register();
 
 //-----------GEN INIT-------------
 
