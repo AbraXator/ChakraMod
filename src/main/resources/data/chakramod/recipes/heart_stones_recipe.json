@@ -1,0 +1,13 @@
+{
+    "ingredients":[
+        {
+            "tag": "chakramod:heart_stones"
+        },
+        {
+            "tag": "chakramod:armor"
+        }
+    ],
+    "output": {
+        "item": "chakramod:stone_work_bench"
+    }
+}
