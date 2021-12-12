@@ -2,6 +2,7 @@ package net.chakramod.mod.block.custom.stoneWorkBench;
 
 
 import net.chakramod.mod.ChakraMod;
+import net.chakramod.mod.block.custom.ModBlockEntities;
 import net.chakramod.mod.recipes.StoneWorkBenchRecipe;
 import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
 import net.minecraft.block.BlockState;
@@ -32,29 +33,29 @@ public class StoneWorkBenchEntity extends BlockEntity implements NamedScreenHand
     private int maxProgress = 63;
 
     public StoneWorkBenchEntity(BlockPos pos, BlockState state) {
-            super(ChakraMod.STONE_WORK_BENCH_ENTITY, pos, state);
-            this.propertyDelegate = new PropertyDelegate() {
-                public int get(int index){
-                    switch (index){
-                        case 0: return StoneWorkBenchEntity.this.progress;
-                        case 1: return StoneWorkBenchEntity.this.maxProgress;
-                        default: return 0;
-                    }
+        super(ModBlockEntities.STONE_WORK_BENCH_ENTITY, pos, state);
+        this.propertyDelegate = new PropertyDelegate() {
+            public int get(int index){
+                switch (index){
+                    case 0: return StoneWorkBenchEntity.this.progress;
+                    case 1: return StoneWorkBenchEntity.this.maxProgress;
+                    default: return 0;
                 }
+            }
 
-                @Override
-                public void set(int index, int value) {
-                    switch (index){
-                        case 0: StoneWorkBenchEntity.this.progress = value; break;
-                        case 1: StoneWorkBenchEntity.this.maxProgress = value; break;
-                    }
+            @Override
+            public void set(int index, int value) {
+                switch (index){
+                    case 0: StoneWorkBenchEntity.this.progress = value; break;
+                    case 1: StoneWorkBenchEntity.this.maxProgress = value; break;
                 }
+            }
 
-                @Override
-                public int size() {
-                    return 2;
-                }
-            };
+            @Override
+            public int size() {
+                return 2;
+            }
+        };
     }
 
     @Override
@@ -86,6 +87,8 @@ public class StoneWorkBenchEntity extends BlockEntity implements NamedScreenHand
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, StoneWorkBenchEntity entity) {
+        System.out.println("WHY ARE YOU NOT CALLING ME BACK?!");
+
         if(hasRecipe(entity)){
             entity.progress++;
             if(entity.progress > entity.maxProgress){

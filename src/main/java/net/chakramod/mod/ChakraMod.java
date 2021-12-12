@@ -1,6 +1,7 @@
 package net.chakramod.mod;
 
 import net.chakramod.mod.block.ModBlocks;
+import net.chakramod.mod.block.custom.ModBlockEntities;
 import net.chakramod.mod.block.custom.stoneWorkBench.StoneWorkBenchEntity;
 import net.chakramod.mod.gen.ModWorldGen;
 import net.chakramod.mod.recipes.ModRecipes;
@@ -80,7 +81,6 @@ public class ChakraMod implements ModInitializer {
 
 //--------------------BLOCK REG------------------------
 
-	public static final ModBlocks STONE_WORK_BENCH = new ModBlocks(FabricBlockSettings.of(Material.STONE).strength(4).requiresTool());
 
 //---------------SCREEN-------------
 
@@ -90,7 +90,6 @@ public class ChakraMod implements ModInitializer {
 
 //--------------BLOCK ENTITY----------------
 
-	public static BlockEntityType<StoneWorkBenchEntity> STONE_WORK_BENCH_ENTITY;
 
 //---------------INIT---------------
 
@@ -131,8 +130,7 @@ public class ChakraMod implements ModInitializer {
 
 //---------BLOCK REG INIT-------
 
-		STONE_WORK_BENCH_ENTITY = Registry.register(Registry.BLOCK_ENTITY_TYPE, "chakramod:stone_work_bench_entity",
-				FabricBlockEntityTypeBuilder.create(StoneWorkBenchEntity::new, STONE_WORK_BENCH).build(null));
+		ModBlockEntities.registerBlockEntities();
 
 //--------BLOCK GEN INIT---------
 

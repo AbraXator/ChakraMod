@@ -1,8 +1,13 @@
 package net.chakramod.mod.block.custom.stoneWorkBench;
 
+import net.chakramod.mod.ChakraMod;
+import net.chakramod.mod.block.custom.ModBlockEntities;
+import net.chakramod.mod.entity.ModEntities;
 import net.chakramod.mod.item.ModItems;
 import net.minecraft.block.*;
 import net.minecraft.block.entity.BlockEntity;
+import net.minecraft.block.entity.BlockEntityTicker;
+import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.inventory.Inventories;
 import net.minecraft.inventory.Inventory;
@@ -66,5 +71,11 @@ public class StoneWorkBench extends BlockWithEntity implements BlockEntityProvid
     @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
         return VoxelShapes.cuboid(0f, 0.01f, 0f, 1f, 0.7f, 1f);
+    }
+
+    @Nullable
+    @Override
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
+        return checkType(type, ModBlockEntities.STONE_WORK_BENCH_ENTITY, StoneWorkBenchEntity::tick);
     }
 }
