@@ -1,3 +1,6 @@
 {
-    "parent": "chakramod:block/glowstone_crystal"
+    "parent": "item/generated",
+    "textures": {
+        "layer0": "chakramod:block/glowstone_crystal"
+    }
 }

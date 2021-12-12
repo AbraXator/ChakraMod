@@ -1,3 +1,7 @@
 {
-  "parent": "chakramod:block/mineral_log"
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "minecraft:block/mineral_log_top",
+    "side": "minecraft:block/mineral_log"
+  }
 }

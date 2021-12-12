@@ -36,10 +36,6 @@ public class MineralSnailEntity extends PathAwareEntity implements IAnimatable {
         event.getController().setAnimation(new AnimationBuilder().addAnimation("walk", true));
         return PlayState.CONTINUE;
     }
-        if(!event.isMoving()){
-        event.getController().setAnimation(new AnimationBuilder().addAnimation("close", false));
-        return PlayState.CONTINUE;
-    }
         return PlayState.CONTINUE;
 }
 

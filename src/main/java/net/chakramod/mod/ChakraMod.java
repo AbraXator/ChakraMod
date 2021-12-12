@@ -48,7 +48,7 @@ public class ChakraMod implements ModInitializer {
 
 //-------------SPAWN EGG-------------
 
-	public static final Item MINERAL_SNAIL_SPAWN_EGG = new SpawnEggItem(ChakraMod.MINERAL_SNAIL, 16770508, 7758668, new Item.Settings().group(ModItemGroup.MALACHIT));
+	//public static final Item MINERAL_SNAIL_SPAWN_EGG = new SpawnEggItem(ChakraMod.MINERAL_SNAIL, 16770508, 7758668, new Item.Settings().group(ModItemGroup.MALACHIT));
 
 //--------------ENTITY------------------------
 
@@ -113,7 +113,7 @@ public class ChakraMod implements ModInitializer {
 
 //------------ENTITY SPAWN EGG INIT------------
 
-		Registry.register(Registry.ITEM, new Identifier("chakramod", "mineral_snail_spawn_egg"), MINERAL_SNAIL_SPAWN_EGG);
+		//Registry.register(Registry.ITEM, new Identifier("chakramod", "mineral_snail_spawn_egg"), MINERAL_SNAIL_SPAWN_EGG);
 
 //---------------ENTITY INIT-----------
 

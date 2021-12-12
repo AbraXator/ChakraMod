@@ -3,11 +3,13 @@
     "item.chakramod.magnetit": "Magnetite",
     "item.chakramod.amazonite": "Amazonite",
     "item.chakramod.rhodonite": "Rhodonite",
+
     "item.chakramod.mineral_snail_spawn_egg": "Mineral Snail Spawn Egg",
 
     "block.chakramod.heart_ore": "Heart Ore",
     "block.chakramod.stone_work_bench": "Stone Work Bench",
     "block.chakramod.glowstone_crystal": "Glowstone Crystal",
+    "block.chakramod.black_mineral_stone": "Black Mineral Stone",
 
     "itemGroup.chakramod.malachit": "Chakra Mod"
 }

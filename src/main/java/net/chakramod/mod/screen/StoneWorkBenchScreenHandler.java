@@ -6,46 +6,54 @@ import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.screen.ArrayPropertyDelegate;
+import net.minecraft.screen.PropertyDelegate;
 import net.minecraft.screen.ScreenHandler;
-import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.screen.slot.Slot;
-import net.minecraft.text.Text;
-import org.jetbrains.annotations.Nullable;
-import org.lwjgl.system.CallbackI;
+import net.minecraft.world.World;
 
 public class StoneWorkBenchScreenHandler extends ScreenHandler {
     private final Inventory inventory;
+    private final World world;
+    private PropertyDelegate propertyDelegate;
 
     public StoneWorkBenchScreenHandler(int syncId, PlayerInventory playerInventory) {
-        this(syncId, playerInventory, new SimpleInventory(3));
+        this(syncId, playerInventory, new SimpleInventory(3), new ArrayPropertyDelegate(2));
     }
 
-    public StoneWorkBenchScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory){
+    public StoneWorkBenchScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory, PropertyDelegate propertyDelegate) {
         super(ChakraMod.STONE_WORK_BENCH_SCREEN_HANDLER, syncId);
         this.inventory = inventory;
+        this.world = playerInventory.player.world;
         checkSize(inventory, 3);
         inventory.onOpen(playerInventory.player);
+        this.propertyDelegate = propertyDelegate;
 
         this.addSlot(new Slot(inventory, 0, 27, 53));
         this.addSlot(new Slot(inventory, 1, 76, 53));
         this.addSlot(new Slot(inventory, 2, 134, 53));
 
-        int m;
-        int l;
-        for (m = 0; m < 3; ++m) {
-            for (l = 0; l < 9; ++l) {
-                this.addSlot(new Slot(playerInventory, l + m * 9 + 9, 8 + l * 18, 84 + m * 18));
-            }
-        }
-        //The player Hotbar
-        for (m = 0; m < 9; ++m) {
-            this.addSlot(new Slot(playerInventory, m, 8 + m * 18, 142));
-        }
+        addPlayerInventory(playerInventory);
+        addPlayerHotbar(playerInventory);
+
+        addProperties(propertyDelegate);
+    }
+
+    public boolean isCrafting() {
+        return propertyDelegate.get(0) > 0;
+    }
+
+    public int getScaledProgress() {
+        int progress = this.propertyDelegate.get(0);
+        int maxProgress = this.propertyDelegate.get(1);
+        int progressArrowSize = 21;
+
+        return maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }
 
     @Override
     public boolean canUse(PlayerEntity player) {
-        return true;
+        return this.inventory.canPlayerUse(player);
     }
 
     @Override
@@ -69,7 +77,20 @@ public class StoneWorkBenchScreenHandler extends ScreenHandler {
                 slot.markDirty();
             }
         }
-
         return newStack;
+    }
+
+    private void addPlayerInventory(PlayerInventory playerInventory) {
+        for (int i = 0; i < 3; ++i) {
+            for (int l = 0; l < 9; ++l) {
+                this.addSlot(new Slot(playerInventory, l + i * 9 + 9, 8 + l * 18, 86 + i * 18));
+            }
+        }
+    }
+
+    private void addPlayerHotbar(PlayerInventory playerInventory) {
+        for (int i = 0; i < 9; ++i) {
+            this.addSlot(new Slot(playerInventory, i, 8 + i * 18, 144));
+        }
     }
 }
