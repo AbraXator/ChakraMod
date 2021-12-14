@@ -1,14 +1,8 @@
 package net.chakramod.mod.entity;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.mob.PathAwareEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.NbtCompound;
-import net.minecraft.network.Packet;
-import net.minecraft.util.Arm;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
 import software.bernie.geckolib3.core.PlayState;
@@ -38,7 +32,6 @@ public class MineralSnailEntity extends PathAwareEntity implements IAnimatable {
     }
         return PlayState.CONTINUE;
 }
-
 
     @Override
     public void registerControllers(AnimationData data){

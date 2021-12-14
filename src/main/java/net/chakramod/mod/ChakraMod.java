@@ -2,36 +2,26 @@ package net.chakramod.mod;
 
 import net.chakramod.mod.block.ModBlocks;
 import net.chakramod.mod.block.custom.ModBlockEntities;
-import net.chakramod.mod.block.custom.stoneWorkBench.StoneWorkBenchEntity;
+import net.chakramod.mod.entity.MineralSnailEntity;
 import net.chakramod.mod.gen.ModWorldGen;
+import net.chakramod.mod.item.ModItems;
 import net.chakramod.mod.recipes.ModRecipes;
 import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
-import net.chakramod.mod.entity.MineralSnailEntity;
-import net.chakramod.mod.item.ModItemGroup;
-import net.chakramod.mod.item.ModItems;
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.object.builder.v1.block.FabricBlockSettings;
-import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
 import net.fabricmc.fabric.api.particle.v1.FabricParticleTypes;
 import net.fabricmc.fabric.api.screenhandler.v1.ScreenHandlerRegistry;
-import net.minecraft.block.Material;
-import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.entity.EntityDimensions;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.SpawnGroup;
 import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.item.Item;
-import net.minecraft.item.SpawnEggItem;
 import net.minecraft.particle.DefaultParticleType;
 import net.minecraft.screen.ScreenHandlerType;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import software.bernie.example.client.model.entity.ExampleEntityModel;
 import software.bernie.geckolib3.GeckoLib;
 
 public class ChakraMod implements ModInitializer {
@@ -138,6 +128,6 @@ public class ChakraMod implements ModInitializer {
 
 //--------LOGGER INIT------
 
-		LOGGER.info("Hello Furry world!");
+		LOGGER.info("Hello world!");
 	}
 }

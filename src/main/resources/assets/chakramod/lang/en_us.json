@@ -10,6 +10,11 @@
     "block.chakramod.stone_work_bench": "Stone Work Bench",
     "block.chakramod.glowstone_crystal": "Glowstone Crystal",
     "block.chakramod.black_mineral_stone": "Black Mineral Stone",
+    "block.chakramod.black_mineral_stone_stairs": "Black Mineral Stone Stairs",
+    "block.chakramod.black_mineral_stone_slab": "Black Mineral Stone Slab",
+    "block.chakramod.black_mineral_stone_wall": "Black Mineral Stone Wall",
+    "block.chakramod.black_mineral_stone_bricks": "Black Mineral Stone Bricks",
+    "block.chakramod.black_mineral_cracked_stone_bricks": "Black Mineral Cracked Stone Bricks",
 
     "itemGroup.chakramod.malachit": "Chakra Mod"
 }

@@ -2,13 +2,11 @@ package net.chakramod.mod.recipes;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import net.chakramod.mod.screen.StoneWorkBenchScreen;
-import net.minecraft.inventory.CraftingInventory;
 import net.minecraft.inventory.SimpleInventory;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
+import net.minecraft.text.LiteralText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
@@ -33,12 +31,12 @@ public class StoneWorkBenchRecipe implements Recipe<SimpleInventory>{
 
     @Override
     public ItemStack craft(SimpleInventory inventory) {
-        return output;
+        return output.copy();
     }
 
     @Override
     public ItemStack getOutput() {
-        return output.copy();
+        return output.copy().setCustomName(new LiteralText("Pepa"));
     }
 
     @Override

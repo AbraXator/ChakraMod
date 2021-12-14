@@ -1,7 +1,6 @@
 package net.chakramod.mod.block.custom.stoneWorkBench;
 
 
-import net.chakramod.mod.ChakraMod;
 import net.chakramod.mod.block.custom.ModBlockEntities;
 import net.chakramod.mod.recipes.StoneWorkBenchRecipe;
 import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
@@ -87,8 +86,6 @@ public class StoneWorkBenchEntity extends BlockEntity implements NamedScreenHand
     }
 
     public static void tick(World world, BlockPos pos, BlockState state, StoneWorkBenchEntity entity) {
-        System.out.println("WHY ARE YOU NOT CALLING ME BACK?!");
-
         if(hasRecipe(entity)){
             entity.progress++;
             if(entity.progress > entity.maxProgress){
