@@ -1,5 +1,6 @@
 package net.chakramod.mod.entity;
 
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.goal.WanderAroundFarGoal;
 import net.minecraft.entity.mob.PathAwareEntity;
@@ -38,7 +39,12 @@ public class MineralSnailEntity extends PathAwareEntity implements IAnimatable {
         data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
     }
 
+    public boolean isPushable() {
+        return false;
+    }
 
+    protected void pushAway(Entity entity) {
+    }
 
     @Override
     public AnimationFactory getFactory(){
@@ -47,6 +53,6 @@ public class MineralSnailEntity extends PathAwareEntity implements IAnimatable {
 
     @Override
     protected void initGoals() {
-        this.goalSelector.add(1, new WanderAroundFarGoal(this, 0.45f, 1));
+        this.goalSelector.add(1, new WanderAroundFarGoal(this, 0.3f, 2));
     }
 }

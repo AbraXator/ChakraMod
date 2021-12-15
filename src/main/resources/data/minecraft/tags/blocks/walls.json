@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "chakramod:black_mineral_stone_wall"
+    "chakramod:black_mineral_stone_wall",
+    "chakramod:black_mineral_stone_brick_wall"
   ]
 }
