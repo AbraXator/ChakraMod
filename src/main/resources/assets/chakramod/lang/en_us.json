@@ -10,14 +10,14 @@
     "block.chakramod.stone_work_bench": "Stone Work Bench",
     "block.chakramod.glowstone_crystal": "Glowstone Crystal",
     "block.chakramod.black_mineral_stone": "Black Mineral Stone",
-    "block.chakramod.black_mineral_stone_stairs": "Black Mineral Stone Stairs",
-    "block.chakramod.black_mineral_stone_slab": "Black Mineral Stone Slab",
-    "block.chakramod.black_mineral_stone_wall": "Black Mineral Stone Wall",
-    "block.chakramod.black_mineral_stone_bricks": "Black Mineral Stone Bricks",
-    "block.chakramod.black_mineral_stone_brick_stairs": "Black Mineral Stone Bricks Stairs",
-    "block.chakramod.black_mineral_stone_brick_slab": "Black Mineral Stone Bricks Slab",
-    "block.chakramod.black_mineral_stone_brick_wall": "Black Mineral Stone Bricks Wall",
-    "block.chakramod.black_mineral_cracked_stone_bricks": "Black Mineral Cracked Stone Bricks",
+    "block.chakramod.black_mineral_stone_stairs": "Black Mineral Stairs",
+    "block.chakramod.black_mineral_stone_slab": "Black Mineral Slab",
+    "block.chakramod.black_mineral_stone_wall": "Black Mineral Wall",
+    "block.chakramod.black_mineral_stone_bricks": "Black Mineral Bricks",
+    "block.chakramod.black_mineral_stone_brick_stairs": "Black Mineral Bricks Stairs",
+    "block.chakramod.black_mineral_stone_brick_slab": "Black Mineral Bricks Slab",
+    "block.chakramod.black_mineral_stone_brick_wall": "Black Mineral Bricks Wall",
+    "block.chakramod.black_mineral_cracked_stone_bricks": "Cracked Black Mineral Bricks",
 
     "itemGroup.chakramod.malachit": "Chakra Mod"
 }
