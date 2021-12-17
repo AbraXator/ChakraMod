@@ -1,9 +1,9 @@
 package net.chakramod.mod;
 
 import net.chakramod.mod.block.ModBlocks;
-import net.chakramod.mod.screen.StoneWorkBenchScreen;
+import net.chakramod.mod.entity.renderer.CrystalLurkerEntityRenderer;
 import net.chakramod.mod.entity.renderer.MineralSnailEntityRenderer;
-import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
+import net.chakramod.mod.screen.StoneWorkBenchScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
@@ -15,7 +15,6 @@ import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
 import net.minecraft.client.particle.FlameParticle;
 import net.minecraft.client.render.RenderLayer;
 import net.minecraft.screen.PlayerScreenHandler;
-import net.minecraft.screen.ScreenHandler;
 import net.minecraft.util.Identifier;
 
 @Environment(EnvType.CLIENT)
@@ -35,6 +34,7 @@ public class ChakraModClient implements ClientModInitializer {
 //---------------ENTITY INIT---------------
 
         EntityRendererRegistry.register(ChakraMod.MINERAL_SNAIL, MineralSnailEntityRenderer::new);
+        EntityRendererRegistry.register(ChakraMod.CRYSTAL_LURKER, CrystalLurkerEntityRenderer::new);
         //EntityRendererRegistry.register(ChakraMod.CHAKRA_VILLAGER, ChakraVillagerEntityRenderer::new);
 
 //---------------RENDERLAYER INIT---------------

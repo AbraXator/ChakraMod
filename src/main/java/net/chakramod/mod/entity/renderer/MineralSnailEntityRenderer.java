@@ -10,6 +10,5 @@ public class MineralSnailEntityRenderer extends GeoEntityRenderer<MineralSnailEn
     {
         super(context, new MineralSnailEntityModel());
         this.shadowRadius = 0.3F;
-
     }
 }

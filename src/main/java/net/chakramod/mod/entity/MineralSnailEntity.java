@@ -46,6 +46,8 @@ public class MineralSnailEntity extends PathAwareEntity implements IAnimatable {
     protected void pushAway(Entity entity) {
     }
 
+
+
     @Override
     public AnimationFactory getFactory(){
         return this.factory;
