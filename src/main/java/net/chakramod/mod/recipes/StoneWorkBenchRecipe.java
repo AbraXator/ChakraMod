@@ -2,11 +2,12 @@ package net.chakramod.mod.recipes;
 
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import net.chakramod.mod.item.ModItems;
 import net.minecraft.inventory.SimpleInventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.network.PacketByteBuf;
 import net.minecraft.recipe.*;
-import net.minecraft.text.LiteralText;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.JsonHelper;
 import net.minecraft.util.collection.DefaultedList;
@@ -17,6 +18,7 @@ public class StoneWorkBenchRecipe implements Recipe<SimpleInventory>{
     private final DefaultedList<Ingredient> recipeItems;
     private final ItemStack output;
     private final Identifier id;
+    public static NbtCompound nbtCompound;
 
     public StoneWorkBenchRecipe(Identifier id, ItemStack output, DefaultedList<Ingredient> recipeItems){
         this.id = id;
@@ -31,12 +33,14 @@ public class StoneWorkBenchRecipe implements Recipe<SimpleInventory>{
 
     @Override
     public ItemStack craft(SimpleInventory inventory) {
-        return output.copy();
+        if(recipeItems.get(2).equals(ModItems.MALACHIT)) {
+            return output.writeNbt(nbtCompound);
+        }
     }
 
     @Override
     public ItemStack getOutput() {
-        return output.copy().setCustomName(new LiteralText("Pepa"));
+        return output.copy();
     }
 
     @Override

@@ -30,7 +30,13 @@ public class ModBlocks {
     public static final Block BLACK_MINERAL_STONE_BRICK_STAIRS = registerBlock("black_mineral_stone_brick_stairs", new ModStairsBlock(ModBlocks.BLACK_MINERAL_STONE.getDefaultState(), FabricBlockSettings.of(Material.STONE).strength(5.0F).requiresTool()));
     public static final Block BLACK_MINERAL_STONE_BRICK_SLAB = registerBlock("black_mineral_stone_brick_slab", new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(5.0F).requiresTool()));
     public static final Block BLACK_MINERAL_STONE_BRICK_WALL = registerBlock("black_mineral_stone_brick_wall", new WallBlock(FabricBlockSettings.of(Material.STONE).strength(5.0F).requiresTool()));
+    public static final Block BLACK_MINERAL_SMOOTH_STONE = registerBlock("black_mineral_smooth_stone", new Block(FabricBlockSettings.of(Material.STONE).strength(5.0F).requiresTool()));
     public static final Block BLACK_MINERAL_CRACKED_STONE_BRICKS = registerBlock("black_mineral_cracked_stone_bricks", new Block(FabricBlockSettings.of(Material.STONE).strength(5.0F).requiresTool()));
+    public static final Block GREEN_MINERAL_STONE_BRICKS = registerBlock("green_mineral_stone_bricks", new Block(FabricBlockSettings.of(Material.STONE).strength(5.0F).requiresTool()));
+    public static final Block GREEN_MINERAL_STONE_BRICK_STAIRS = registerBlock("green_mineral_stone_brick_stairs", new ModStairsBlock(ModBlocks.BLACK_MINERAL_STONE.getDefaultState(), FabricBlockSettings.of(Material.STONE).strength(5.0F).requiresTool()));
+    public static final Block GREEN_MINERAL_STONE_BRICK_SLAB = registerBlock("green_mineral_stone_brick_slab", new SlabBlock(FabricBlockSettings.of(Material.STONE).strength(5.0F).requiresTool()));
+    public static final Block GREEN_MINERAL_STONE_BRICK_WALL = registerBlock("green_mineral_stone_brick_wall", new WallBlock(FabricBlockSettings.of(Material.STONE).strength(5.0F).requiresTool()));
+
 
     private static Block registerBlock(String name, Block block){
         registerBlockItem(name, block);

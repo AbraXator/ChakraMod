@@ -2,15 +2,12 @@ package net.chakramod.mod.entity;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
-import net.minecraft.entity.ai.goal.AttackGoal;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.ai.goal.WanderAroundGoal;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.PathAwareEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import software.bernie.geckolib3.core.IAnimatable;
@@ -22,6 +19,7 @@ import software.bernie.geckolib3.core.manager.AnimationData;
 import software.bernie.geckolib3.core.manager.AnimationFactory;
 
 import java.util.EnumSet;
+import java.util.Random;
 
 public class CrystalLurkerEntity extends PathAwareEntity implements IAnimatable {
     protected static final TrackedData<Byte> CRYSTAL_LURKER_FLAGS;
@@ -54,8 +52,7 @@ public class CrystalLurkerEntity extends PathAwareEntity implements IAnimatable 
     @Override
     protected void initGoals() {
         super.initGoals();
-        this.goalSelector.add(1, new WanderAroundGoal(this, 0.4D, 1, false));
-        this.goalSelector.add(10, new AttackGoal(this));
+        //this.goalSelector.add(10, new CrystalLurkerEntity.Attack());
         this.goalSelector.add(3, new CrystalLurkerEntity.Surrender());
     }
 
@@ -181,29 +178,21 @@ public class CrystalLurkerEntity extends PathAwareEntity implements IAnimatable 
         }
 
         public void start(){
-            PlayerEntity player = (PlayerEntity) CrystalLurkerEntity.this.getTarget();
-            Direction direction = player.getHorizontalFacing();
-            Vec3d vec3d = CrystalLurkerEntity.this.getPos();
-
-            switch(direction){
-                case UP:
-                    CrystalLurkerEntity.this.getNavigation().startMovingTo(vec3d.x, vec3d.y, vec3d.z, 1);
-                case DOWN:
-                    CrystalLurkerEntity.this.getNavigation().startMovingTo(vec3d.x, vec3d.y, vec3d.z, 1);
-                case EAST:
-                    CrystalLurkerEntity.this.getNavigation().startMovingTo(vec3d.x + random.nextInt(20), vec3d.y, vec3d.z, 1);
-                case WEST:
-                    CrystalLurkerEntity.this.getNavigation().startMovingTo(vec3d.x - random.nextInt(20), vec3d.y, vec3d.z, 1);
-                case NORTH:
-                    CrystalLurkerEntity.this.getNavigation().startMovingTo(vec3d.x, vec3d.y, vec3d.z - random.nextInt(20), 1);
-                case SOUTH:
-                    CrystalLurkerEntity.this.getNavigation().startMovingTo(vec3d.x, vec3d.y, vec3d.z + random.nextInt(20), 1);
+            Vec3d pos = CrystalLurkerEntity.this.getPos();
+            Random random = new Random();
+            if(CrystalLurkerEntity.this.getHealth() <= 5.0F){
+                int direction = random.nextInt(2);
+                switch (direction){
+                    case 1:
+                        CrystalLurkerEntity.this.getNavigation().startMovingTo(pos.x + random.nextInt(20 + 1 - 10) + 10, pos.y + random.nextInt(20 + 1 - 10) + 10, pos.z + random.nextInt(20 + 1 - 10) + 10, 0.7D);
+                    case 2:
+                        CrystalLurkerEntity.this.getNavigation().startMovingTo(pos.x + random.nextInt(0 + 1 - (-20)) + (-20), pos.y + random.nextInt(0 + 1 - (-20)) + (-20), pos.z + random.nextInt(0 + 1 - (-20)) + (-20), 0.7D);
+                }
             }
         }
 
         @Override
         public void stop() {
-            CrystalLurkerEntity.this.getNavigation().stop();
             super.stop();
         }
     }
