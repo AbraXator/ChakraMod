@@ -26,7 +26,6 @@ public class StoneWorkBenchScreenHandler extends ScreenHandler {
         this.inventory = inventory;
         this.world = playerInventory.player.world;
         checkSize(inventory, 3);
-        checkDataCount(propertyDelegate, 2);
         inventory.onOpen(playerInventory.player);
         this.propertyDelegate = propertyDelegate;
         this.addSlot(new Slot(inventory, 0, 27, 53));

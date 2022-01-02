@@ -33,7 +33,7 @@ public class StoneWorkBenchScreen extends HandledScreen<StoneWorkBenchScreenHand
         drawTexture(matrices, x, y, 0, 0, backgroundWidth, backgroundHeight);
         if(handler.isCrafting()){
             int progress = handler.getScaledProgress();
-            this.drawTexture(matrices, x + 176, y + 0, 176, 37, progress, 10);
+            this.drawTexture(matrices, x + 102, y + 51, 176, 12, progress, 17);
         }
     }
 

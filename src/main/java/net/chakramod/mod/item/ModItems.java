@@ -6,6 +6,7 @@ import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.Rarity;
 import net.minecraft.util.registry.Registry;
 
 public class ModItems {
@@ -21,8 +22,12 @@ public class ModItems {
     public static final SpawnEggItem MINERAL_SNAIL_SPAWN_EGG = (SpawnEggItem) registerItem("mineral_snail_spawn_egg",
             new SpawnEggItem(ChakraMod.MINERAL_SNAIL, 16770508, 7758668,
                     new Item.Settings().group(ModItemGroup.MALACHIT)));
-    public static final Item NECKLACE_OF_CHAKRA = registerItem("necklace_of_chakra",
-            new goldenNecklace(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(1).fireproof()));
+    public static final Item GOLDEN_NECKLACE = registerItem("golden_necklace",
+            new goldenNecklace(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(1).fireproof().rarity(Rarity.UNCOMMON)));
+    public static final Item DIAMOND_NECKLACE = registerItem("diamond_necklace",
+            new Item(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(1).fireproof().rarity(Rarity.RARE)));
+    public static final Item NETHERITE_NECKLACE = registerItem("netherite_necklace",
+            new Item(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(1).fireproof().rarity(Rarity.EPIC)));
 
 
     private static Item registerItem(String name, Item item) {

@@ -8,6 +8,7 @@ import net.chakramod.mod.gen.ModWorldGen;
 import net.chakramod.mod.item.ModItems;
 import net.chakramod.mod.recipes.ModRecipes;
 import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
+import net.chakramod.mod.util.ModRenderHelper;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricEntityTypeBuilder;
@@ -89,10 +90,15 @@ public class ChakraMod implements ModInitializer {
 //--------------BLOCK ENTITY----------------
 
 
+
 //---------------INIT---------------
 
 	@Override
 	public void onInitialize() {
+//----------RENDER LAYER---------
+
+		ModRenderHelper.setRenderLayer();
+
 //---------RECIPE INIT-------------
 
 		ModRecipes.register();

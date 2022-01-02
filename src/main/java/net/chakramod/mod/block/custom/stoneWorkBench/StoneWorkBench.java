@@ -37,6 +37,11 @@ public class StoneWorkBench extends BlockWithEntity implements BlockEntityProvid
     private static final Text TITLE = new TranslatableText("container.stone_work_bench_crafting");
 
     @Override
+    public void onBreak(World world, BlockPos pos, BlockState state, PlayerEntity player) {
+        super.onBreak(world, pos, state, player);
+    }
+
+    @Override
     public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
         return new StoneWorkBenchEntity(pos, state);
     }

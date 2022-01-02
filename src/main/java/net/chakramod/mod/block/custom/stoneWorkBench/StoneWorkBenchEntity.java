@@ -2,7 +2,7 @@ package net.chakramod.mod.block.custom.stoneWorkBench;
 
 
 import net.chakramod.mod.block.custom.ModBlockEntities;
-import net.chakramod.mod.recipes.StoneWorkBenchRecipe;
+import net.chakramod.mod.recipes.stoneWorkBench.StoneWorkBenchRecipe;
 import net.chakramod.mod.screen.StoneWorkBenchScreenHandler;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntity;

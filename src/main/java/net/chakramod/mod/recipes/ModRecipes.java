@@ -1,6 +1,7 @@
 package net.chakramod.mod.recipes;
 
 import net.chakramod.mod.ChakraMod;
+import net.chakramod.mod.recipes.stoneWorkBench.StoneWorkBenchRecipe;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
 

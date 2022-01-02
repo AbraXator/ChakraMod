@@ -2,18 +2,21 @@
   "type": "minecraft:crafting_shaped",
   "pattern": [
    " # ",
-   "# #",
+   "#&#",
    " @ "
   ],
   "key": {
     "#": {
-      "item": "minecraft:gold_ingot"
+      "item": "minecraft:diamond"
+    },
+    "&": {
+      "item": "chakramod:golden_necklace"
     },
     "@": {
       "item": "minecraft:iron_ingot"
     }
   },
   "result": {
-    "item": "chakramod:golden_necklace"
+    "item": "chakramod:diamond_necklace"
   }
 }

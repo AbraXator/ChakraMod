@@ -9,6 +9,7 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.fabricmc.fabric.api.client.particle.v1.ParticleFactoryRegistry;
+import net.fabricmc.fabric.api.client.rendering.v1.ColorProviderRegistry;
 import net.fabricmc.fabric.api.client.rendering.v1.EntityRendererRegistry;
 import net.fabricmc.fabric.api.client.screenhandler.v1.ScreenRegistry;
 import net.fabricmc.fabric.api.event.client.ClientSpriteRegistryCallback;
@@ -22,6 +23,12 @@ public class ChakraModClient implements ClientModInitializer {
 
     @Override
     public void onInitializeClient() {
+//-------------COLOR PROVIDER------------------
+
+        //ColorProviderRegistry.ITEM.register((stack, tintIndex) -> {
+        //    return 0xFF0000;
+        //}, TINTED_ITEM);
+
 //-------------SCREEN INIT------------------------
 
         ScreenRegistry.register(ChakraMod.STONE_WORK_BENCH_SCREEN_HANDLER, StoneWorkBenchScreen::new);
