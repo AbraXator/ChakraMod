@@ -34,8 +34,9 @@ public class StoneWorkBenchRecipe implements Recipe<SimpleInventory>{
     @Override
     public ItemStack craft(SimpleInventory inventory) {
         if(recipeItems.get(2).equals(ModItems.MALACHIT)) {
-            return output.writeNbt(nbtCompound);
+            return output.copy();
         }
+        return null;
     }
 
     @Override

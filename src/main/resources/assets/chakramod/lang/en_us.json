@@ -10,17 +10,23 @@
     "item.chakramod.mineral_snail_spawn_egg": "Mineral Snail Spawn Egg",
 
     "block.chakramod.heart_ore": "Heart Ore",
+    "block.chakramod.root_ore": "Root Ore",
+    "block.chakramod.throat_ore": "throat Ore",
     "block.chakramod.stone_work_bench": "Mineral Work Bench",
     "block.chakramod.glowstone_crystal": "Glowstone Crystal",
-    "block.chakramod.black_mineral_stone": "Black Mineral",
-    "block.chakramod.black_mineral_stone_stairs": "Black Mineral Stairs",
-    "block.chakramod.black_mineral_stone_slab": "Black Mineral Slab",
-    "block.chakramod.black_mineral_stone_wall": "Black Mineral Wall",
-    "block.chakramod.black_mineral_stone_bricks": "Black Mineral Bricks",
-    "block.chakramod.black_mineral_stone_brick_stairs": "Black Mineral Bricks Stairs",
-    "block.chakramod.black_mineral_stone_brick_slab": "Black Mineral Bricks Slab",
-    "block.chakramod.black_mineral_stone_brick_wall": "Black Mineral Bricks Wall",
-    "block.chakramod.black_mineral_cracked_stone_bricks": "Cracked Black Mineral Bricks",
+    "block.chakramod.black_mineral": "Black Mineral",
+    "block.chakramod.black_mineral_stairs": "Black Mineral Stairs",
+    "block.chakramod.black_mineral_slab": "Black Mineral Slab",
+    "block.chakramod.black_mineral_wall": "Black Mineral Wall",
+    "block.chakramod.black_mineral_bricks": "Black Mineral Bricks",
+    "block.chakramod.black_mineral_brick_stairs": "Black Mineral Bricks Stairs",
+    "block.chakramod.black_mineral_brick_slab": "Black Mineral Bricks Slab",
+    "block.chakramod.black_mineral_brick_wall": "Black Mineral Brick Wall",
+    "block.chakramod.black_mineral_cracked_bricks": "Cracked Black Mineral Bricks",
+    "block.chakramod.black_smooth_mineral": "Black Smooth Mineral",
+
+    "advacements.chakramod.stone.name": "Stones",
+    "advacements.chakramod.stone.description": "Obtain one of chakra stones."
 
     "itemGroup.chakramod.malachit": "Chakra Mod"
 }

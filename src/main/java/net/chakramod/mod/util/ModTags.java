@@ -14,7 +14,7 @@ public class ModTags {
     public static class Items{
         public static final Tag<Item> HEART_STONES = createTag("heart_stones");
         public static final Tag<Item> ARMOR = createTag("armor");
-        public static final Tag<Item> STONES = createTag("armor");
+        public static final Tag<Item> STONES = createTag("stones");
 
         private static Tag<Item> createTag(String name) {
             return TagRegistry.item(new Identifier(ChakraMod.MOD_ID, name));
