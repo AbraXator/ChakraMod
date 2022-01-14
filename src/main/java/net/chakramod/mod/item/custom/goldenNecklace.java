@@ -6,12 +6,17 @@ import net.chakramod.mod.item.ModItems;
 import net.chakramod.mod.util.ModTags;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.effect.StatusEffects;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemUsageContext;
 import net.minecraft.nbt.NbtCompound;
+import net.minecraft.nbt.NbtList;
 import net.minecraft.text.LiteralText;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -55,15 +60,23 @@ public class goldenNecklace extends Item {
     }
 
     @Override
-    public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
-        ItemStack stack = user.getStackInHand(hand);
-        if(hand.equals(Hand.MAIN_HAND)){
-            addNbt(user);
-        }
-        System.out.println(user.getActiveStatusEffects());
-        System.out.println(stack.getNbt());
-        return TypedActionResult.success(stack);
+    public void onCraft(ItemStack stack, World world, PlayerEntity player) {
+        NbtCompound nbtCompound = new NbtCompound();
+        nbtCompound.putString("ABC", stones[1]);
+        stack.setNbt(nbtCompound);
+        EntityType.EXPERIENCE_ORB.spawn(world, )
     }
+
+    //@Override
+    //public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
+    //    ItemStack stack = user.getStackInHand(hand);
+    //    if(hand.equals(Hand.MAIN_HAND)){
+    //        addNbt(user);
+    //    }
+    //    System.out.println(user.getActiveStatusEffects());
+    //    System.out.println(stack.getNbt());
+    //    return TypedActionResult.success(stack);
+    //}
 
     @Override
     public void onStoppedUsing(ItemStack stack, World world, LivingEntity user, int remainingUseTicks) {
@@ -97,7 +110,7 @@ public class goldenNecklace extends Item {
     public void malachit(ItemStack stack, PlayerEntity player){
         if(hasGNecklace(player)){
             if(stack.getNbt().contains("Chakra Type")){
-                //if(player.getActiveStatusEffects().containsValue());
+                player.setStatusEffect(new StatusEffectInstance(StatusEffects.ABSORPTION, 100), player);
             }
         }
     }

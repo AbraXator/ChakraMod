@@ -1,8 +1,10 @@
 package net.chakramod.mod;
 
 import net.chakramod.mod.block.ModBlocks;
+import net.chakramod.mod.entity.MineralTraderEntity;
 import net.chakramod.mod.entity.renderer.CrystalLurkerEntityRenderer;
 import net.chakramod.mod.entity.renderer.MineralSnailEntityRenderer;
+import net.chakramod.mod.entity.renderer.MineralTraderEntityRenderer;
 import net.chakramod.mod.screen.StoneWorkBenchScreen;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.EnvType;
@@ -42,6 +44,7 @@ public class ChakraModClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(ChakraMod.MINERAL_SNAIL, MineralSnailEntityRenderer::new);
         EntityRendererRegistry.register(ChakraMod.CRYSTAL_LURKER, CrystalLurkerEntityRenderer::new);
+        EntityRendererRegistry.register(ChakraMod.MINERAL_TRADER, MineralTraderEntityRenderer::new);
         //EntityRendererRegistry.register(ChakraMod.CHAKRA_VILLAGER, ChakraVillagerEntityRenderer::new);
 
 //---------------RENDERLAYER INIT---------------

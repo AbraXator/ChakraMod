@@ -28,4 +28,6 @@ public class MalachitEnchant extends Enchantment {
     public int getMaxLevel() {
         return 1;
     }
+
+
 }

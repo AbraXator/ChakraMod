@@ -1,9 +1,9 @@
 {
-  "mineral_snail": {
-    "category": "friendly_creatures",
-    "subtitle": "chakramod.mineral_snail",
+  "chakra_cave_noise1": {
+    "category": "ambient",
+    "subtitle": "chakramod.cave_noise1",
     "sounds": [
-      "chakramod:mineral_snail"
+      "chakramod:chakra_cave_noise1"
     ]
   }
 }

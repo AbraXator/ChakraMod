@@ -24,7 +24,7 @@
     "block.chakramod.black_mineral_stone_brick_slab": "Black Mineral Bricks Slab",
     "block.chakramod.black_mineral_stone_brick_wall": "Black Mineral Brick Wall",
     "block.chakramod.black_mineral_stone_cracked_bricks": "Cracked Black Mineral Bricks",
-    "block.chakramod.black_mineral_smooth_stone": "Black Smooth Mineral",
+    "block.chakramod.black_mineral_smooth_stone": "Smooth Black Mineral",
 
     "block.chakramod.green_mineral_stone": "Green Mineral",
     "block.chakramod.green_mineral_stone_stairs": "Green Mineral Stairs",
@@ -35,7 +35,7 @@
     "block.chakramod.green_mineral_stone_brick_slab": "Green Mineral Bricks Slab",
     "block.chakramod.green_mineral_stone_brick_wall": "Green Mineral Brick Wall",
     "block.chakramod.green_mineral_stone_cracked_bricks": "Cracked Green Mineral Bricks",
-    "block.chakramod.green_mineral_smooth_stone": "Green Smooth Mineral",
+    "block.chakramod.green_mineral_smooth_stone": "Smooth GreenMineral",
 
 
     "advancements.chakramod.stone.name": "Stones",
