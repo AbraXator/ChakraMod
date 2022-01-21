@@ -1,7 +1,7 @@
 package net.chakramod.mod.item;
 
 import net.chakramod.mod.ChakraMod;
-import net.chakramod.mod.item.custom.goldenNecklace;
+import net.chakramod.mod.item.custom.GoldenNecklace;
 import net.fabricmc.fabric.api.item.v1.FabricItemSettings;
 import net.minecraft.item.Item;
 import net.minecraft.item.SpawnEggItem;
@@ -42,7 +42,7 @@ public class ModItems {
             new SpawnEggItem(ChakraMod.MINERAL_SNAIL, 16770508, 7758668,
                     new Item.Settings().group(ModItemGroup.MALACHIT)));
     public static final Item GOLDEN_NECKLACE = registerItem("golden_necklace",
-            new goldenNecklace(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(1).fireproof().rarity(Rarity.UNCOMMON)));
+            new GoldenNecklace(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(1).fireproof().rarity(Rarity.UNCOMMON)));
     public static final Item DIAMOND_NECKLACE = registerItem("diamond_necklace",
             new Item(new FabricItemSettings().group(ModItemGroup.MALACHIT).maxCount(1).fireproof().rarity(Rarity.RARE)));
     public static final Item NETHERITE_NECKLACE = registerItem("netherite_necklace",

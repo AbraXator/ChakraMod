@@ -1,0 +1,61 @@
+{
+  "temperature": 1,
+  "downfall": 0.3,
+  "preception": "rain",
+  "category": "underground",
+  "effects": {
+    "sky_color": 2040877,
+    "fog_color": 1053721,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
+    },
+    "additions_sound": {
+      "sound": "block.amethyst_block.chime",
+      "tick_chance": 0.01
+    },
+    "particle": {
+      "options": {
+        "type": "end_rod"
+      },
+      "probability": 0.0001
+    }
+  },
+  "spawners": {
+    "monster": [],
+    "creature":  [],
+    "ambient": [
+      {
+        "type": "chakramod:mineral_snail",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 5
+      }
+    ],
+    "axolotls": [],
+    "underground_water_creature": [
+      {
+        "type": "minecraft:glow_squid",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 6
+      }
+    ],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "features": []
+}

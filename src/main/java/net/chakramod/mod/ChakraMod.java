@@ -59,12 +59,12 @@ public class ChakraMod implements ModInitializer {
 					FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, CrystalLurkerEntity::new).dimensions(EntityDimensions.fixed(0.4F, 0.6F)).build()
 			);
 
-	public static final EntityType<CrystalLurkerEntity> MINERAL_TRADER =
-			Registry.register(
-					Registry.ENTITY_TYPE,
-					new Identifier("chakramod", "mineral_trader"),
-					FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, CrystalLurkerEntity::new).dimensions(EntityDimensions.fixed(0.4F, 0.6F)).build()
-			);
+	//public static final EntityType<MineralTraderEntity> MINERAL_TRADER =
+	//		Registry.register(
+	//				Registry.ENTITY_TYPE,
+	//				new Identifier("chakramod", "mineral_trader"),
+	//				FabricEntityTypeBuilder.create(SpawnGroup.CREATURE, MineralTraderEntity::new).dimensions(EntityDimensions.fixed(0.4F, 0.6F)).build()
+	//		);
 
 	/*public static final EntityType<ChakraVillagerEntity> CHAKRA_VILLAGER =
 			Registry.register(

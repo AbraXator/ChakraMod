@@ -16,9 +16,7 @@ import software.bernie.geckolib3.core.manager.AnimationFactory;
 import java.util.Random;
 
 public class MineralSnailEntity extends PathAwareEntity implements IAnimatable {
-
     private AnimationFactory factory = new AnimationFactory(this);
-
     Random random = new Random();
 
     public MineralSnailEntity(EntityType<? extends PathAwareEntity> entityType, World world) {
